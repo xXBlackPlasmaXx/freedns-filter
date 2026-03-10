@@ -68,5 +68,25 @@
     "CategoryNumber": "113",
     "CategoryName": "Parked",
     "Allow": false
+  },
+  {
+    "CategoryNumber": "49",
+    "CategoryName": "Music",
+    "Allow": true
+  },
+  {
+    "CategoryNumber": "96",
+    "CategoryName": "Society - Politics",
+    "Allow": true
+  },
+  {
+    "CategoryNumber": "117",
+    "CategoryName": "Forums - Social Networking",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "134",
+    "CategoryName": "Security - Malware",
+    "Allow": false
   }
 ]
