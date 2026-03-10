@@ -1,58 +1,55 @@
 # FreeDNS Filter Helper
 
-Node.js tool to bulk-check domains against Lightspeed, capture categories, and keep mappings editable.
+Node.js tool to scrape FreeDNS public domains and bulk-check them against Lightspeed with editable category mappings.
 
 ## Quick start
+- Install deps and run the combined scraper + checker:
 ```bash
 npm install
-npm start
-```
-
-## Interactive CLI (scrape + check)
-- Run and answer prompts for FreeDNS page range; it will scrape public domains then run the checker:
-```bash
 npm run cli
 ```
-- Prompts: start page (default 1) and end page (default start page).
-- Uses output paths: `data/freedns-public.txt`, `output/results.json`, `output/blocked.json`.
 
-## FreeDNS registry scrape (optional)
+## CLI (scrape + check)
+- Command: `npm run cli`
+- Prompts for start/end pages unless provided via flags or env; cookies are optional and only needed if the registry requires login.
+- Outputs: [data/freedns-public.txt](data/freedns-public.txt), [output/results.json](output/results.json) (allowed), [output/blocked.json](output/blocked.json) (blocked).
+- Flags: `--start/-s`, `--end/-e`, `--cookie/-c`, `--domains-file/-d`, `--no-prompt` (skip prompts, use defaults/env/flags).
+- Example non-interactive run:
 ```bash
-npm run scrape:freedns
+npm run cli -- --start 1 --end 2 --cookie "DNSID=...; ..." --no-prompt
 ```
 
-### Windows PowerShell env examples
+## FreeDNS scrape only
+- Command: `npm run scrape:freedns`
+- Defaults: registry https://freedns.afraid.org/domain/registry/, sort `2` (Status, Age), delay 1500 ms, output [data/freedns-public.txt](data/freedns-public.txt).
+- Env knobs: `FREEDNS_REGISTRY_URL`, `FREEDNS_SORT`, `FREEDNS_QUERY`, `FREEDNS_MAX_PAGES`, `FREEDNS_DELAY_MS`, `FREEDNS_OUTPUT_FILE`, `FREEDNS_UA`, `FREEDNS_ACCEPT_LANGUAGE`, `FREEDNS_COOKIE`.
+- Gzip/deflate, Referer, and Accept-Language headers are set; session cookie is passed if provided.
 
 ## Inputs
-- Domain list: edit `data/domains.txt` (comma or newline separated), or set `LS_DOMAINS="a.com,b.com"`, or point to a file with `LS_DOMAINS_FILE=./my-domains.txt`.
-- Category map: edit `config/categories.json` (CategoryNumber, CategoryName, Allow).
-
-## What happens
-- Looks up each domain via Lightspeed.
-- Splits results into allowed and blocked.
-- Records any unknown category IDs into `config/new-categories.json` with example hosts for later labeling.
+- Domains: edit [data/domains.txt](data/domains.txt) (comma or newline separated), or set `LS_DOMAINS="a.com,b.com"`, or point to a file with `LS_DOMAINS_FILE=./my-domains.txt`.
+- Categories: edit [config/categories.json](config/categories.json) (CategoryNumber, CategoryName, Allow). Unknown IDs are captured into [config/new-categories.json](config/new-categories.json) with example hosts.
 
 ## Outputs
-- Allowed: `output/results.json`
-- Blocked: `output/blocked.json`
-- Unknown categories collected in: `config/new-categories.json`
+- Scraped list: [data/freedns-public.txt](data/freedns-public.txt)
+- Allowed results: [output/results.json](output/results.json)
+- Blocked results: [output/blocked.json](output/blocked.json)
+- Newly seen categories: [config/new-categories.json](config/new-categories.json)
 
-## Tunables (env vars)
-- `LS_CONCURRENCY` (default 5): parallel lookups.
-- `LS_TIMEOUT_MS` (default 5000): per-lookup timeout in ms.
-- `LS_CONFIG_DIR`, `LS_DATA_DIR`, `LS_OUTPUT_DIR`: override folders if you want a different layout.
+## Tunables (env)
+- `LS_CONCURRENCY` (default 5) — parallel lookups
+- `LS_TIMEOUT_MS` (default 5000) — per-lookup timeout in ms
+- `LS_CONFIG_DIR`, `LS_DATA_DIR`, `LS_OUTPUT_DIR` — override folders
+- FreeDNS scrape: `FREEDNS_*` and `FREEDNS_COOKIE`
 
 ## Folder map
-- `src/index.js` — main runner (lookup + bulk).
-- `config/` — editable category mappings and discovered categories.
-- `data/` — domain list input.
-- `output/` — generated results (git-ignored).
+- [src/index.js](src/index.js) — main lookup + bulk runner
+- [scripts/cli.js](scripts/cli.js) — interactive/non-interactive scraper + checker
+- [scripts/freedns-scrape.js](scripts/freedns-scrape.js) — standalone scraper
+- [config/](config) — category maps (editable and discovered)
+- [data/](data) — domain inputs
+- [output/](output) — generated results (git-ignored)
 
 ## Typical edits
-- Add or change categories in `config/categories.json`.
-- Approve/rename discovered categories in `config/new-categories.json` by setting `CategoryName` and `Allow`.
-- Swap the domain list in `data/domains.txt` or pass `LS_DOMAINS`/`LS_DOMAINS_FILE`.
-
-## Notes
-- Keep category data in `config/`; no hardcoding needed.
-- Outputs are ignored by git so the repo stays clean.
+- Update categories in [config/categories.json](config/categories.json)
+- Approve/rename discovered categories in [config/new-categories.json](config/new-categories.json)
+- Swap domain list via [data/domains.txt](data/domains.txt), `LS_DOMAINS`, or `LS_DOMAINS_FILE`

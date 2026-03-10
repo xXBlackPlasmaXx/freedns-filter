@@ -1,6 +1,7 @@
 const https = require("https");
 const fs = require("fs");
 const path = require("path");
+const zlib = require("zlib");
 
 function parseIntEnv(name, fallback) {
   const n = parseInt(process.env[name], 10);
@@ -12,24 +13,48 @@ const DEFAULT_SORT = "2"; // Status, Age
 const DEFAULT_DELAY_MS = 1500;
 const DEFAULT_OUTPUT_FILE = path.resolve(__dirname, "..", "data", "freedns-public.txt");
 const DEFAULT_USER_AGENT = "lightspeed-freedns-scraper (+https://github.com/xXBlackPlasmaXx/freedns-filter)";
+const DEFAULT_ACCEPT_LANGUAGE = "en-US,en;q=0.9";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function fetchPage(url, userAgent) {
+function fetchPage(url, userAgent, cookie, acceptLanguage = DEFAULT_ACCEPT_LANGUAGE) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { headers: { "User-Agent": userAgent } }, (res) => {
+    const headers = {
+      "User-Agent": userAgent,
+      Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+      "Accept-Encoding": "gzip,deflate",
+      "Accept-Language": acceptLanguage,
+      Referer: "https://freedns.afraid.org/domain/registry/",
+    };
+    if (cookie) headers.Cookie = cookie;
+
+    const req = https.get(url, { headers }, (res) => {
       if (res.statusCode && res.statusCode >= 400) {
         reject(new Error(`HTTP ${res.statusCode} for ${url}`));
         res.resume();
         return;
       }
-      let data = "";
+      const chunks = [];
       res.on("data", (chunk) => {
-        data += chunk.toString();
+        chunks.push(chunk);
       });
-      res.on("end", () => resolve(data));
+      res.on("end", () => {
+        const bodyBuffer = Buffer.concat(chunks);
+        const encoding = (res.headers["content-encoding"] || "").toLowerCase();
+        try {
+          if (encoding.includes("gzip")) {
+            return resolve(zlib.gunzipSync(bodyBuffer).toString());
+          }
+          if (encoding.includes("deflate")) {
+            return resolve(zlib.inflateSync(bodyBuffer).toString());
+          }
+          return resolve(bodyBuffer.toString());
+        } catch (err) {
+          return reject(err);
+        }
+      });
     });
     req.on("error", reject);
   });
@@ -53,6 +78,7 @@ function parseAgeToSeconds(text) {
 }
 
 function parseDomains(html) {
+  if (!html || html.length < 50) return new Set();
   const rows = html.match(/<tr[\s\S]*?<\/tr>/gi) || [];
   const entries = [];
   for (const row of rows) {
@@ -68,6 +94,19 @@ function parseDomains(html) {
   // Sort by status (all public) then age ascending (oldest first)
   entries.sort((a, b) => a.ageSeconds - b.ageSeconds || a.domain.localeCompare(b.domain));
   const set = new Set(entries.map((e) => e.domain));
+
+  // Fallback: if structured parse fails (0 results), use loose domain regex
+  if (set.size === 0) {
+    const loose = new Set();
+    const regex = /([a-z0-9-]+(?:\.[a-z0-9-]+)+)/gi;
+    let m;
+    while ((m = regex.exec(html)) !== null) {
+      const d = m[1].toLowerCase();
+      if (d.length > 3 && d.includes(".")) loose.add(d);
+    }
+    return loose;
+  }
+
   return set;
 }
 
@@ -96,18 +135,20 @@ async function scrapeFreeDns(options = {}) {
   const delayMs = options.delayMs ?? parseIntEnv("FREEDNS_DELAY_MS", DEFAULT_DELAY_MS);
   const outputFile = options.outputFile || process.env.FREEDNS_OUTPUT_FILE || DEFAULT_OUTPUT_FILE;
   const userAgent = options.userAgent || process.env.FREEDNS_UA || DEFAULT_USER_AGENT;
+  const cookie = options.cookie || process.env.FREEDNS_COOKIE || "";
+  const acceptLanguage = options.acceptLanguage || process.env.FREEDNS_ACCEPT_LANGUAGE || DEFAULT_ACCEPT_LANGUAGE;
   const includeSortFallback = options.includeSortFallback !== false;
 
   const all = new Set();
   for (let page = startPage; page <= endPage; page += 1) {
     const url = buildPageUrl(registryUrl, page, { sort, query, includeSort: true });
     console.log(`Fetching page ${page}: ${url}`);
-    const html = await fetchPage(url, userAgent);
+    const html = await fetchPage(url, userAgent, cookie, acceptLanguage);
     let found = parseDomains(html);
     if (found.size === 0 && includeSortFallback && sort) {
       const fallbackUrl = buildPageUrl(registryUrl, page, { sort: undefined, query, includeSort: false });
       console.log(`No domains found; retrying without sort: ${fallbackUrl}`);
-      const html2 = await fetchPage(fallbackUrl, userAgent);
+      const html2 = await fetchPage(fallbackUrl, userAgent, cookie, acceptLanguage);
       found = parseDomains(html2);
     }
     console.log(`Found ${found.size} domains on page ${page}`);
