@@ -7,21 +7,19 @@ function parseIntEnv(name, fallback) {
   return Number.isNaN(n) ? fallback : n;
 }
 
-const REGISTRY_URL = process.env.FREEDNS_REGISTRY_URL || "https://freedns.afraid.org/domain/registry/";
-const SORT_PARAM = process.env.FREEDNS_SORT || "2"; // 2 = Status, Age on freedns
-const QUERY_PARAM = process.env.FREEDNS_QUERY || "";
-const MAX_PAGES = parseIntEnv("FREEDNS_MAX_PAGES", 1);
-const DELAY_MS = parseIntEnv("FREEDNS_DELAY_MS", 1500);
-const OUTPUT_FILE = process.env.FREEDNS_OUTPUT_FILE || path.resolve(__dirname, "..", "data", "freedns-public.txt");
-const USER_AGENT = process.env.FREEDNS_UA || "lightspeed-freedns-scraper (+https://github.com/xXBlackPlasmaXx/freedns-filter)";
+const DEFAULT_REGISTRY_URL = "https://freedns.afraid.org/domain/registry/";
+const DEFAULT_SORT = "2"; // Status, Age
+const DEFAULT_DELAY_MS = 1500;
+const DEFAULT_OUTPUT_FILE = path.resolve(__dirname, "..", "data", "freedns-public.txt");
+const DEFAULT_USER_AGENT = "lightspeed-freedns-scraper (+https://github.com/xXBlackPlasmaXx/freedns-filter)";
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function fetchPage(url) {
+function fetchPage(url, userAgent) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { headers: { "User-Agent": USER_AGENT } }, (res) => {
+    const req = https.get(url, { headers: { "User-Agent": userAgent } }, (res) => {
       if (res.statusCode && res.statusCode >= 400) {
         reject(new Error(`HTTP ${res.statusCode} for ${url}`));
         res.resume();
@@ -73,49 +71,64 @@ function parseDomains(html) {
   return set;
 }
 
-function buildPageUrl(page, { includeSort = true } = {}) {
+function buildPageUrl(registryUrl, page, { sort, query, includeSort = true } = {}) {
   try {
-    const u = new URL(REGISTRY_URL);
+    const u = new URL(registryUrl);
     u.searchParams.set("page", String(page));
-    if (includeSort && SORT_PARAM) u.searchParams.set("sort", SORT_PARAM);
-    if (QUERY_PARAM) u.searchParams.set("q", QUERY_PARAM);
+    if (includeSort && sort) u.searchParams.set("sort", sort);
+    if (query) u.searchParams.set("q", query);
     return u.toString();
   } catch (err) {
-    const sep = REGISTRY_URL.includes("?") ? "&" : "?";
-    const base = `${REGISTRY_URL}${sep}page=${page}`;
-    const sortPart = includeSort && SORT_PARAM ? `&sort=${encodeURIComponent(SORT_PARAM)}` : "";
-    const qPart = QUERY_PARAM ? `&q=${encodeURIComponent(QUERY_PARAM)}` : "";
+    const sep = registryUrl.includes("?") ? "&" : "?";
+    const base = `${registryUrl}${sep}page=${page}`;
+    const sortPart = includeSort && sort ? `&sort=${encodeURIComponent(sort)}` : "";
+    const qPart = query ? `&q=${encodeURIComponent(query)}` : "";
     return `${base}${sortPart}${qPart}`;
   }
 }
 
-async function scrape() {
+async function scrapeFreeDns(options = {}) {
+  const registryUrl = options.registryUrl || process.env.FREEDNS_REGISTRY_URL || DEFAULT_REGISTRY_URL;
+  const sort = options.sort ?? process.env.FREEDNS_SORT ?? DEFAULT_SORT;
+  const query = options.query ?? process.env.FREEDNS_QUERY ?? "";
+  const startPage = options.startPage ?? parseIntEnv("FREEDNS_START_PAGE", 1);
+  const endPage = options.endPage ?? parseIntEnv("FREEDNS_END_PAGE", parseIntEnv("FREEDNS_MAX_PAGES", 1));
+  const delayMs = options.delayMs ?? parseIntEnv("FREEDNS_DELAY_MS", DEFAULT_DELAY_MS);
+  const outputFile = options.outputFile || process.env.FREEDNS_OUTPUT_FILE || DEFAULT_OUTPUT_FILE;
+  const userAgent = options.userAgent || process.env.FREEDNS_UA || DEFAULT_USER_AGENT;
+  const includeSortFallback = options.includeSortFallback !== false;
+
   const all = new Set();
-  for (let page = 1; page <= MAX_PAGES; page += 1) {
-    const url = buildPageUrl(page, { includeSort: true });
+  for (let page = startPage; page <= endPage; page += 1) {
+    const url = buildPageUrl(registryUrl, page, { sort, query, includeSort: true });
     console.log(`Fetching page ${page}: ${url}`);
-    const html = await fetchPage(url);
+    const html = await fetchPage(url, userAgent);
     let found = parseDomains(html);
-    if (found.size === 0 && SORT_PARAM) {
-      const fallbackUrl = buildPageUrl(page, { includeSort: false });
+    if (found.size === 0 && includeSortFallback && sort) {
+      const fallbackUrl = buildPageUrl(registryUrl, page, { sort: undefined, query, includeSort: false });
       console.log(`No domains found; retrying without sort: ${fallbackUrl}`);
-      const html2 = await fetchPage(fallbackUrl);
+      const html2 = await fetchPage(fallbackUrl, userAgent);
       found = parseDomains(html2);
     }
     console.log(`Found ${found.size} domains on page ${page}`);
     for (const d of found) all.add(d);
-    if (page < MAX_PAGES) await sleep(DELAY_MS);
+    if (page < endPage) await sleep(delayMs);
   }
 
-  const outputDir = path.dirname(OUTPUT_FILE);
+  const outputDir = path.dirname(outputFile);
   if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
 
   const list = Array.from(all).sort();
-  fs.writeFileSync(OUTPUT_FILE, list.join("\n"));
-  console.log(`Wrote ${list.length} domains to ${OUTPUT_FILE}`);
+  fs.writeFileSync(outputFile, list.join("\n"));
+  console.log(`Wrote ${list.length} domains to ${outputFile}`);
+  return { domains: list, outputFile };
 }
 
-scrape().catch((err) => {
-  console.error("Scrape failed:", err.message || err);
-  process.exit(1);
-});
+if (require.main === module) {
+  scrapeFreeDns().catch((err) => {
+    console.error("Scrape failed:", err.message || err);
+    process.exit(1);
+  });
+}
+
+module.exports = { scrapeFreeDns };
