@@ -7,6 +7,7 @@
     "scrape:freedns": "node scripts/freedns-scrape.js",
     "cli": "node scripts/cli.js",
     "cli:help": "node scripts/cli.js --help",
+    "clean-output": "node scripts/clean-output.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
