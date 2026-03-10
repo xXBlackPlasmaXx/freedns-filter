@@ -1,44 +1,43 @@
 # FreeDNS Filter Helper
 
-Minimal Node.js helper to bulk-check domains against Lightspeed and record category decisions.
+Node.js tool to bulk-check domains against Lightspeed, capture categories, and keep mappings editable.
 
-## What’s here
-- `src/index.js`: single entry point (lookup + bulk runner).
-- `config/categories.json`: editable allow/block map by category ID.
-- `config/new-categories.json`: auto-populated with unknown category IDs and example hosts; edit this to name/allow new categories.
-- `data/domains.txt`: sample domains list; replace with your own.
-- `output/`: generated results (`results.json`, `blocked.json`) on each run (git-ignored).
-
-## Setup
+## Quick start
 ```bash
 npm install
-```
-
-## Run
-- Use sample domains file:
-```bash
 npm start
 ```
-- Override domains inline:
-```bash
-LS_DOMAINS="example.com,wikipedia.org" npm start
-```
-- Point to a different file:
-```bash
-LS_DOMAINS_FILE=./my-domains.txt npm start
-```
 
-## Config knobs
-- `LS_CONCURRENCY` (default 5): parallel lookups.
-- `LS_TIMEOUT_MS` (default 5000): per-lookup timeout.
-- `LS_CONFIG_DIR`, `LS_DATA_DIR`, `LS_OUTPUT_DIR`: override default folders if needed.
+## Inputs
+- Domain list: edit `data/domains.txt` (comma or newline separated), or set `LS_DOMAINS="a.com,b.com"`, or point to a file with `LS_DOMAINS_FILE=./my-domains.txt`.
+- Category map: edit `config/categories.json` (CategoryNumber, CategoryName, Allow).
+
+## What happens
+- Looks up each domain via Lightspeed.
+- Splits results into allowed and blocked.
+- Records any unknown category IDs into `config/new-categories.json` with example hosts for later labeling.
 
 ## Outputs
 - Allowed: `output/results.json`
 - Blocked: `output/blocked.json`
-- Unknown categories are appended to `config/new-categories.json` with examples; edit `CategoryName`/`Allow` to teach the tool.
+- Unknown categories collected in: `config/new-categories.json`
 
-## Housekeeping
-- `node_modules/` and `output/` are git-ignored.
-- Keep category mappings editable in `config/` rather than hardcoding.
-- Replace `data/domains.txt` with your real list; it’s just a placeholder.
+## Tunables (env vars)
+- `LS_CONCURRENCY` (default 5): parallel lookups.
+- `LS_TIMEOUT_MS` (default 5000): per-lookup timeout in ms.
+- `LS_CONFIG_DIR`, `LS_DATA_DIR`, `LS_OUTPUT_DIR`: override folders if you want a different layout.
+
+## Folder map
+- `src/index.js` — main runner (lookup + bulk).
+- `config/` — editable category mappings and discovered categories.
+- `data/` — domain list input.
+- `output/` — generated results (git-ignored).
+
+## Typical edits
+- Add or change categories in `config/categories.json`.
+- Approve/rename discovered categories in `config/new-categories.json` by setting `CategoryName` and `Allow`.
+- Swap the domain list in `data/domains.txt` or pass `LS_DOMAINS`/`LS_DOMAINS_FILE`.
+
+## Notes
+- Keep category data in `config/`; no hardcoding needed.
+- Outputs are ignored by git so the repo stays clean.
