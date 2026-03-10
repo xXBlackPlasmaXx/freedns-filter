@@ -147,15 +147,18 @@ async function main() {
 
   const sort = await promptText("Sort value (default 2 = Status, Age): ", defaultSort || "2", cliArgs.noPrompt);
   const query = await promptText("Search query (default empty): ", defaultQuery, cliArgs.noPrompt);
-  const delayMs = await prompt("Delay between pages ms (default 1500): ", defaultDelay, cliArgs.noPrompt);
+
   const outputFile = await promptText(
     `Output file for scraped domains (default ${defaultOutputFile}): `,
     defaultOutputFile,
     cliArgs.noPrompt
   );
 
+  const delayMs = await prompt("Delay between pages ms (default 1500): ", defaultDelay, cliArgs.noPrompt);
+
   let cookie = cliArgs.cookie ?? envCookie;
-  if (!cookie) cookie = await promptText("Session cookie (paste if logged-in, blank to skip): ", "", cliArgs.noPrompt);
+  if (!cookie)
+    cookie = await promptText("Session cookie (paste if logged-in; leave blank if public pages work): ", "", cliArgs.noPrompt);
 
   console.log(`Scraping FreeDNS pages ${startPage} to ${safeEnd} (public domains only)...`);
   const { domains } = await scrapeFreeDns({
