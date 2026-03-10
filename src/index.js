@@ -133,9 +133,10 @@ async function lookupDomain(host, { timeoutMs = 5000 } = {}) {
   });
 }
 
-async function runLimited(jobs, limit) {
+async function runLimited(jobs, limit, { onProgress } = {}) {
   const results = new Array(jobs.length);
   let index = 0;
+  let done = 0;
 
   async function worker() {
     while (true) {
@@ -143,6 +144,8 @@ async function runLimited(jobs, limit) {
       if (current >= jobs.length) return;
       index += 1;
       results[current] = await jobs[current]();
+      done += 1;
+      if (onProgress) onProgress(done, jobs.length, results[current]);
     }
   }
 
@@ -205,7 +208,20 @@ async function runBulk({ hosts, concurrency, timeoutMs, resultsPath, blockedPath
     }
   });
 
-  const results = await runLimited(jobs, concurrency);
+  const isTTY = process.stdout.isTTY;
+  const results = await runLimited(jobs, concurrency, {
+    onProgress(done, total, result) {
+      const host = result.host || "";
+      const status = result.allowed ? "\x1b[32m✓\x1b[0m" : result.error ? "\x1b[33m!\x1b[0m" : "\x1b[31m✗\x1b[0m";
+      const line = `  [${done}/${total}] ${status} ${host}`;
+      if (isTTY) {
+        process.stdout.clearLine(0);
+        process.stdout.cursorTo(0);
+        process.stdout.write(line);
+      }
+    },
+  });
+  if (isTTY) process.stdout.write("\n");
 
   logCategorySummary(results);
 
