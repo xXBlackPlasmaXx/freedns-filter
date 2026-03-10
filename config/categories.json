@@ -33,5 +33,40 @@
     "CategoryNumber": "67",
     "CategoryName": "Access Denied",
     "Allow": false
+  },
+  {
+    "CategoryNumber": "3",
+    "CategoryName": "Ads",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "13",
+    "CategoryName": "Games",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "39",
+    "CategoryName": "Forums - Personals",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "42",
+    "CategoryName": "Alcohol",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "66",
+    "CategoryName": "Weapons",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "94",
+    "CategoryName": "Porn - Illicit",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "113",
+    "CategoryName": "Parked",
+    "Allow": false
   }
 ]
