@@ -11,9 +11,9 @@ npm run cli
 
 ## CLI (scrape + check)
 - Command: `npm run cli`
-- Prompts for start/end pages unless provided via flags or env; cookies are optional and only needed if the registry requires login.
+- Prompts cover everything: domains source (file vs scrape), start/end pages, registry URL, sort, query, delay, output file, cookie, lookup concurrency, and timeout. Flags/env can still prefill, but prompts ask for confirmation unless `--no-prompt`.
 - Outputs: [data/freedns-public.txt](data/freedns-public.txt), [output/results.json](output/results.json) (allowed), [output/blocked.json](output/blocked.json) (blocked).
-- Flags: `--start/-s`, `--end/-e`, `--cookie/-c`, `--domains-file/-d`, `--no-prompt` (skip prompts, use defaults/env/flags).
+- Flags: `--start/-s`, `--end/-e`, `--cookie/-c`, `--domains-file/-d`, `--no-prompt`.
 - Example non-interactive run:
 ```bash
 npm run cli -- --start 1 --end 2 --cookie "DNSID=...; ..." --no-prompt

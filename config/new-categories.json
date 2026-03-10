@@ -1,1 +1,10 @@
-{}
+{
+  "94": {
+    "CategoryNumber": "94",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "chickenkiller.com"
+    ]
+  }
+}

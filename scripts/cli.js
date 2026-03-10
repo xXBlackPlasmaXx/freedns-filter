@@ -65,6 +65,16 @@ async function prompt(question, fallback, skip) {
   return Number.isNaN(n) ? fallback : n;
 }
 
+async function promptText(question, fallback, skip) {
+  if (skip || !process.stdin.isTTY) return fallback;
+  const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+  const answer = await new Promise((resolve) => rl.question(question, resolve));
+  rl.close();
+  const trimmed = answer.trim();
+  if (!trimmed && fallback !== undefined) return fallback;
+  return trimmed;
+}
+
 async function main() {
   ensureDir(DATA_DIR);
   ensureDir(OUTPUT_DIR);
@@ -73,19 +83,40 @@ async function main() {
   const envStart = parseIntOr(process.env.FREEDNS_START_PAGE, undefined);
   const envEnd = parseIntOr(process.env.FREEDNS_END_PAGE, undefined);
   const envCookie = process.env.FREEDNS_COOKIE || "";
-  const domainsFileArg = cliArgs.domainsFile;
+  const defaultRegistry = process.env.FREEDNS_REGISTRY_URL;
+  const defaultSort = process.env.FREEDNS_SORT;
+  const defaultQuery = process.env.FREEDNS_QUERY || "";
+  const defaultDelay = parseIntOr(process.env.FREEDNS_DELAY_MS, 1500);
+  const defaultOutputFile = process.env.FREEDNS_OUTPUT_FILE || SCRAPE_OUTPUT;
+  const defaultConcurrency = parseIntOr(process.env.LS_CONCURRENCY || process.env.CONCURRENCY, 5);
+  const defaultTimeout = parseIntOr(process.env.LS_TIMEOUT_MS, 5000);
+
+  const domainsFilePrompt = await promptText(
+    "Domains file to check instead of scraping (leave blank to scrape FreeDNS): ",
+    cliArgs.domainsFile || "",
+    cliArgs.noPrompt
+  );
+  const domainsFile = domainsFilePrompt || cliArgs.domainsFile;
 
   // If a domains file is provided, skip scraping and go straight to checks.
-  if (domainsFileArg) {
-    const domains = readDomainsFile(domainsFileArg);
+  if (domainsFile) {
+    const domains = readDomainsFile(domainsFile);
     if (!domains.length) {
-      console.error(`No domains found in ${domainsFileArg}`);
+      console.error(`No domains found in ${domainsFile}`);
       process.exit(1);
     }
-    console.log(`Loaded ${domains.length} domains from ${domainsFileArg}; skipping FreeDNS scrape.`);
+    console.log(`Loaded ${domains.length} domains from ${domainsFile}; skipping FreeDNS scrape.`);
 
-    const concurrency = parseIntOr(process.env.LS_CONCURRENCY || process.env.CONCURRENCY, 5);
-    const timeoutMs = parseIntOr(process.env.LS_TIMEOUT_MS, 5000);
+    const concurrency = await prompt(
+      `Lookup concurrency (default ${defaultConcurrency}): `,
+      defaultConcurrency,
+      cliArgs.noPrompt
+    );
+    const timeoutMs = await prompt(
+      `Per-lookup timeout ms (default ${defaultTimeout}): `,
+      defaultTimeout,
+      cliArgs.noPrompt
+    );
 
     await runBulk({
       hosts: domains,
@@ -99,22 +130,43 @@ async function main() {
     return;
   }
 
-  const startPage =
-    cliArgs.startPage ?? envStart ?? (await prompt("Start page (default 1): ", 1, cliArgs.noPrompt));
-  const endPageRaw =
-    cliArgs.endPage ?? envEnd ?? (await prompt(`End page (default ${startPage}): `, startPage, cliArgs.noPrompt));
+  const startPage = await prompt("Start page (default 1): ", cliArgs.startPage ?? envStart ?? 1, cliArgs.noPrompt);
+  const endPageRaw = await prompt(
+    `End page (default ${startPage}): `,
+    cliArgs.endPage ?? envEnd ?? startPage,
+    cliArgs.noPrompt
+  );
   const endPage = parseIntOr(endPageRaw, startPage);
   const safeEnd = endPage < startPage ? startPage : endPage;
 
+  const registryUrl = await promptText(
+    "Registry URL (default https://freedns.afraid.org/domain/registry/): ",
+    defaultRegistry || "https://freedns.afraid.org/domain/registry/",
+    cliArgs.noPrompt
+  );
+
+  const sort = await promptText("Sort value (default 2 = Status, Age): ", defaultSort || "2", cliArgs.noPrompt);
+  const query = await promptText("Search query (default empty): ", defaultQuery, cliArgs.noPrompt);
+  const delayMs = await prompt("Delay between pages ms (default 1500): ", defaultDelay, cliArgs.noPrompt);
+  const outputFile = await promptText(
+    `Output file for scraped domains (default ${defaultOutputFile}): `,
+    defaultOutputFile,
+    cliArgs.noPrompt
+  );
+
   let cookie = cliArgs.cookie ?? envCookie;
-  if (!cookie) cookie = await prompt("Session cookie (paste if logged-in, blank to skip): ", "", cliArgs.noPrompt);
+  if (!cookie) cookie = await promptText("Session cookie (paste if logged-in, blank to skip): ", "", cliArgs.noPrompt);
 
   console.log(`Scraping FreeDNS pages ${startPage} to ${safeEnd} (public domains only)...`);
-  const { domains, outputFile } = await scrapeFreeDns({
+  const { domains } = await scrapeFreeDns({
     startPage,
     endPage: safeEnd,
-    outputFile: SCRAPE_OUTPUT,
+    outputFile,
     cookie,
+    registryUrl,
+    sort,
+    query,
+    delayMs,
   });
 
   if (!domains || domains.length === 0) {
@@ -122,10 +174,18 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`Running domain checks for ${domains.length} domains...`);
-  const concurrency = parseIntOr(process.env.LS_CONCURRENCY || process.env.CONCURRENCY, 5);
-  const timeoutMs = parseIntOr(process.env.LS_TIMEOUT_MS, 5000);
+  const concurrency = await prompt(
+    `Lookup concurrency (default ${defaultConcurrency}): `,
+    defaultConcurrency,
+    cliArgs.noPrompt
+  );
+  const timeoutMs = await prompt(
+    `Per-lookup timeout ms (default ${defaultTimeout}): `,
+    defaultTimeout,
+    cliArgs.noPrompt
+  );
 
+  console.log(`Running domain checks for ${domains.length} domains...`);
   await runBulk({
     hosts: domains,
     concurrency,
