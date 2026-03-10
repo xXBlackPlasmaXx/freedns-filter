@@ -3,11 +3,7 @@ const fs = require("fs");
 const readline = require("readline");
 const { scrapeFreeDns } = require("./freedns-scrape");
 const { runBulk } = require("../src/index");
-
-function parseIntOr(val, fallback) {
-  const n = parseInt(val, 10);
-  return Number.isNaN(n) ? fallback : n;
-}
+const { parseIntOr, ensureDir } = require("../src/utils");
 
 const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = path.resolve(process.env.LS_DATA_DIR || path.join(ROOT, "data"));
@@ -17,16 +13,14 @@ const SCRAPE_OUTPUT = path.join(DATA_DIR, "freedns-public.txt");
 const RESULTS_PATH = path.join(OUTPUT_DIR, "results.json");
 const BLOCKED_PATH = path.join(OUTPUT_DIR, "blocked.json");
 
-function ensureDir(dir) {
-  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-}
-
 function parseArgs(argv) {
   const args = {};
   for (let i = 2; i < argv.length; i += 1) {
     const a = argv[i];
     const val = argv[i + 1];
-    if (a === "--start" || a === "-s") {
+    if (a === "--help" || a === "-h") {
+      args.help = true;
+    } else if (a === "--start" || a === "-s") {
       args.startPage = parseIntOr(val, undefined);
       i += 1;
     } else if (a === "--end" || a === "-e") {
@@ -75,11 +69,39 @@ async function promptText(question, fallback, skip) {
   return trimmed;
 }
 
+function printHelp() {
+  console.log(`
+Usage: npm run cli [-- options]
+
+Options:
+  -s, --start <page>        Start page for FreeDNS scrape (default: 1)
+  -e, --end <page>          End page for FreeDNS scrape (default: start)
+  -c, --cookie <string>     Session cookie for FreeDNS
+  -d, --domains-file <path> Check domains from file (skip scraping)
+      --no-prompt           Run non-interactively with defaults / flags
+  -h, --help                Show this help message
+
+Environment variables:
+  LS_CONCURRENCY            Parallel lookups (default: 5)
+  LS_TIMEOUT_MS             Per-lookup timeout in ms (default: 5000)
+  FREEDNS_COOKIE            FreeDNS session cookie
+  FREEDNS_REGISTRY_URL      Custom registry URL
+  FREEDNS_SORT              Sort value (default: 2)
+  FREEDNS_DELAY_MS          Delay between pages in ms (default: 1500)
+`);
+}
+
 async function main() {
+  const cliArgs = parseArgs(process.argv);
+
+  if (cliArgs.help) {
+    printHelp();
+    return;
+  }
+
   ensureDir(DATA_DIR);
   ensureDir(OUTPUT_DIR);
 
-  const cliArgs = parseArgs(process.argv);
   const envStart = parseIntOr(process.env.FREEDNS_START_PAGE, undefined);
   const envEnd = parseIntOr(process.env.FREEDNS_END_PAGE, undefined);
   const envCookie = process.env.FREEDNS_COOKIE || "";

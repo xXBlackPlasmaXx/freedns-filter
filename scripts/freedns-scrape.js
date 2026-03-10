@@ -2,11 +2,7 @@ const https = require("https");
 const fs = require("fs");
 const path = require("path");
 const zlib = require("zlib");
-
-function parseIntEnv(name, fallback) {
-  const n = parseInt(process.env[name], 10);
-  return Number.isNaN(n) ? fallback : n;
-}
+const { parseIntOr } = require("../src/utils");
 
 const DEFAULT_REGISTRY_URL = "https://freedns.afraid.org/domain/registry/";
 const DEFAULT_SORT = "2"; // Status, Age
@@ -130,9 +126,9 @@ async function scrapeFreeDns(options = {}) {
   const registryUrl = options.registryUrl || process.env.FREEDNS_REGISTRY_URL || DEFAULT_REGISTRY_URL;
   const sort = options.sort ?? process.env.FREEDNS_SORT ?? DEFAULT_SORT;
   const query = options.query ?? process.env.FREEDNS_QUERY ?? "";
-  const startPage = options.startPage ?? parseIntEnv("FREEDNS_START_PAGE", 1);
-  const endPage = options.endPage ?? parseIntEnv("FREEDNS_END_PAGE", parseIntEnv("FREEDNS_MAX_PAGES", 1));
-  const delayMs = options.delayMs ?? parseIntEnv("FREEDNS_DELAY_MS", DEFAULT_DELAY_MS);
+  const startPage = options.startPage ?? parseIntOr(process.env.FREEDNS_START_PAGE, 1);
+  const endPage = options.endPage ?? parseIntOr(process.env.FREEDNS_END_PAGE, parseIntOr(process.env.FREEDNS_MAX_PAGES, 1));
+  const delayMs = options.delayMs ?? parseIntOr(process.env.FREEDNS_DELAY_MS, DEFAULT_DELAY_MS);
   const outputFile = options.outputFile || process.env.FREEDNS_OUTPUT_FILE || DEFAULT_OUTPUT_FILE;
   const userAgent = options.userAgent || process.env.FREEDNS_UA || DEFAULT_USER_AGENT;
   const cookie = options.cookie || process.env.FREEDNS_COOKIE || "";

@@ -6,13 +6,14 @@
     "start": "node src/index.js",
     "scrape:freedns": "node scripts/freedns-scrape.js",
     "cli": "node scripts/cli.js",
+    "cli:help": "node scripts/cli.js --help",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "ws": "^8.19.0"
   },
-  "keywords": [],
+  "keywords": ["lightspeed", "freedns", "domain-filter"],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "Scrape FreeDNS public domains and bulk-check them against Lightspeed filter categories"
 }

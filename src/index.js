@@ -1,6 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const WebSocket = require("ws");
+const { parseIntOr, ensureDir, loadJson, writeJson, isAllowed } = require("./utils");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONFIG_DIR = path.resolve(process.env.LS_CONFIG_DIR || path.join(ROOT, "config"));
@@ -11,24 +12,13 @@ const CATEGORY_FILE = path.join(CONFIG_DIR, "categories.json");
 const NEW_CATEGORY_FILE = path.join(CONFIG_DIR, "new-categories.json");
 const DEFAULT_DOMAINS_FILE = path.join(DATA_DIR, "domains.txt");
 const LEGACY_DOMAINS_FILE = path.join(ROOT, "domains.txt");
-
-function ensureDir(dir) {
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-}
-
-function loadJson(file, fallback) {
-  try {
-    return JSON.parse(fs.readFileSync(file, "utf8"));
-  } catch (err) {
-    return fallback;
-  }
-}
-
-function writeJson(file, value) {
-  fs.writeFileSync(file, JSON.stringify(value, null, 2));
-}
+const WS_URL =
+  "wss://production-gc.lsfilter.com" +
+  "?a=0ef9b862-b74f-4e8d-8aad-be549c5f452a" +
+  "&customer_id=74-1082-F000" +
+  "&agentType=chrome_extension" +
+  "&agentVersion=3.777.0" +
+  "&userGuid=00000000-0000-0000-0000-000000000000";
 
 ensureDir(CONFIG_DIR);
 ensureDir(DATA_DIR);
@@ -81,12 +71,12 @@ function lightspeedCategorize(num, host) {
   const numKey = String(num);
   const entry = categories.find((item) => String(item.CategoryNumber) === numKey);
   if (entry) {
-    return [entry.CategoryName || "Uncategorized", entry.Allow === 1 || entry.Allow === true];
+    return [entry.CategoryName || "Uncategorized", isAllowed(entry.Allow)];
   }
 
   const discovered = newCategories[numKey] || recordNewCategory(numKey, host);
   if (!discovered) return [numKey, false];
-  return [discovered.CategoryName || numKey, discovered.Allow === true || discovered.Allow === 1];
+  return [discovered.CategoryName || numKey, isAllowed(discovered.Allow)];
 }
 
 async function lookupDomain(host, { timeoutMs = 5000 } = {}) {
@@ -95,9 +85,7 @@ async function lookupDomain(host, { timeoutMs = 5000 } = {}) {
 
   return new Promise((resolve, reject) => {
     let settled = false;
-    const ws = new WebSocket(
-      "wss://production-gc.lsfilter.com?a=0ef9b862-b74f-4e8d-8aad-be549c5f452a&customer_id=74-1082-F000&agentType=chrome_extension&agentVersion=3.777.0&userGuid=00000000-0000-0000-0000-000000000000"
-    );
+    const ws = new WebSocket(WS_URL);
 
     const timer = setTimeout(() => {
       if (settled) return;
@@ -145,11 +133,6 @@ async function lookupDomain(host, { timeoutMs = 5000 } = {}) {
   });
 }
 
-function parseIntOr(val, fallback) {
-  const n = parseInt(val, 10);
-  return Number.isNaN(n) ? fallback : n;
-}
-
 async function runLimited(jobs, limit) {
   const results = new Array(jobs.length);
   let index = 0;
@@ -173,17 +156,18 @@ function logCategorySummary(results) {
   for (const r of results) {
     const key = String(r.raw && r.raw.cat !== undefined ? r.raw.cat : "unknown");
     const name = r.category || "Unknown";
-    const entry = counts.get(key) || { name, total: 0, allowed: 0 };
+    const entry = counts.get(key) || { name, total: 0, allowed: 0, blocked: 0 };
     entry.name = name;
     entry.total += 1;
     if (r.allowed === true) entry.allowed += 1;
+    else entry.blocked += 1;
     counts.set(key, entry);
   }
   const summary = Array.from(counts.entries())
-    .map(([cat, info]) => ({ cat, name: info.name, total: info.total, allowed: info.allowed }))
-    .sort((a, b) => Number(a.cat) - Number(b.cat));
-  console.log("Category summary:");
-  console.log(JSON.stringify(summary, null, 2));
+    .map(([cat, info]) => ({ Cat: cat, Name: info.name, Allowed: info.allowed, Blocked: info.blocked, Total: info.total }))
+    .sort((a, b) => Number(a.Cat) - Number(b.Cat));
+  console.log("\nCategory summary:");
+  console.table(summary);
 }
 
 function readHosts(domainsArg, filePath) {
@@ -242,8 +226,7 @@ async function runBulk({ hosts, concurrency, timeoutMs, resultsPath, blockedPath
     console.error("Failed to write blocked results", err.message || err);
   }
 
-  console.log("Allowed results:");
-  console.log(JSON.stringify(allowed, null, 2));
+  console.log(`\n  Allowed: ${allowed.length}   Blocked: ${blocked.length}   Total: ${results.length}`);
 
   return { allowed, blocked, all: results };
 }
@@ -274,4 +257,5 @@ module.exports = {
   lookupDomain,
   lightspeedCategorize,
   runBulk,
+  readHosts,
 };
