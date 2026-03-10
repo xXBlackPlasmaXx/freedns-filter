@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 const WebSocket = require("ws");
-const { parseIntOr, ensureDir, loadJson, writeJson, isAllowed } = require("./utils");
+const { parseIntOr, ensureDir, loadJson, writeJson, isAllowed, mergeAndWriteJsonArray, autoCommit } = require("./utils");
 
 const ROOT = path.resolve(__dirname, "..");
 const CONFIG_DIR = path.resolve(process.env.LS_CONFIG_DIR || path.join(ROOT, "config"));
@@ -229,15 +229,15 @@ async function runBulk({ hosts, concurrency, timeoutMs, resultsPath, blockedPath
   const blocked = results.filter((r) => r.allowed !== true);
 
   try {
-    writeJson(resultsPath, allowed);
-    console.log(`Allowed written to ${resultsPath}`);
+    const merged = mergeAndWriteJsonArray(resultsPath, allowed, "host");
+    console.log(`Allowed written to ${resultsPath} (${merged.length} total, ${allowed.length} new)`);
   } catch (err) {
     console.error("Failed to write allowed results", err.message || err);
   }
 
   try {
-    writeJson(blockedPath, blocked);
-    console.log(`Blocked written to ${blockedPath}`);
+    const merged = mergeAndWriteJsonArray(blockedPath, blocked, "host");
+    console.log(`Blocked written to ${blockedPath} (${merged.length} total, ${blocked.length} new)`);
   } catch (err) {
     console.error("Failed to write blocked results", err.message || err);
   }
@@ -262,7 +262,8 @@ async function main() {
   const resultsPath = path.join(OUTPUT_DIR, "results.json");
   const blockedPath = path.join(OUTPUT_DIR, "blocked.json");
 
-  await runBulk({ hosts, concurrency, timeoutMs, resultsPath, blockedPath });
+  const { allowed, blocked } = await runBulk({ hosts, concurrency, timeoutMs, resultsPath, blockedPath });
+  autoCommit(ROOT, { allowed: allowed.length, blocked: blocked.length });
 }
 
 if (require.main === module) {

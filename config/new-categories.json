@@ -1,1 +1,18 @@
-{}
+{
+  "21": {
+    "CategoryNumber": "21",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "xxxtream.net"
+    ]
+  },
+  "29": {
+    "CategoryNumber": "29",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "opt-inrewards.com"
+    ]
+  }
+}

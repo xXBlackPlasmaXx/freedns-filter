@@ -3,7 +3,7 @@ const fs = require("fs");
 const readline = require("readline");
 const { scrapeFreeDns } = require("./freedns-scrape");
 const { runBulk } = require("../src/index");
-const { parseIntOr, ensureDir } = require("../src/utils");
+const { parseIntOr, ensureDir, autoCommit } = require("../src/utils");
 
 const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = path.resolve(process.env.LS_DATA_DIR || path.join(ROOT, "data"));
@@ -140,7 +140,7 @@ async function main() {
       cliArgs.noPrompt
     );
 
-    await runBulk({
+    const { allowed, blocked } = await runBulk({
       hosts: domains,
       concurrency,
       timeoutMs,
@@ -148,6 +148,7 @@ async function main() {
       blockedPath: BLOCKED_PATH,
     });
 
+    autoCommit(ROOT, { allowed: allowed.length, blocked: blocked.length });
     console.log("Done. See output/results.json (allowed) and output/blocked.json (blocked).");
     return;
   }
@@ -211,7 +212,7 @@ async function main() {
   );
 
   console.log(`Running domain checks for ${domains.length} domains...`);
-  await runBulk({
+  const { allowed, blocked } = await runBulk({
     hosts: domains,
     concurrency,
     timeoutMs,
@@ -219,6 +220,7 @@ async function main() {
     blockedPath: BLOCKED_PATH,
   });
 
+  autoCommit(ROOT, { allowed: allowed.length, blocked: blocked.length });
   console.log("Done. See output/results.json (allowed) and output/blocked.json (blocked).");
 }
 
