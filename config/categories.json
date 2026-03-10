@@ -85,6 +85,36 @@
     "Allow": false
   },
   {
+    "CategoryNumber": "6",
+    "CategoryName": "Business",
+    "Allow": true
+  },
+  {
+    "CategoryNumber": "21",
+    "CategoryName": "Porn",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "29",
+    "CategoryName": "Security - Domain Sharing",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "33",
+    "CategoryName": "Security - Warez",
+    "Allow": false
+  },
+  {
+    "CategoryNumber": "58",
+    "CategoryName": "Family - Religion",
+    "Allow": true
+  },
+  {
+    "CategoryNumber": "116",
+    "CategoryName": "Security - Nettools",
+    "Allow": true
+  },
+  {
     "CategoryNumber": "134",
     "CategoryName": "Security - Malware",
     "Allow": false
