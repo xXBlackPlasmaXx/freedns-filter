@@ -8,6 +8,15 @@ npm install
 npm start
 ```
 
+## FreeDNS registry scrape (optional)
+- Respect FreeDNS robots.txt and ToS. Current disallows: `/zc.php`, `/tools/contact.php`, `/subdomain/edit.php`, `/password/`. The registry page is allowed.
+- Fetch public domains into `data/freedns-public.txt`:
+```bash
+npm run scrape:freedns
+```
+- Env knobs: `FREEDNS_REGISTRY_URL` (default https://freedns.afraid.org/domain/registry/), `FREEDNS_MAX_PAGES` (default 1), `FREEDNS_DELAY_MS` (default 1500), `FREEDNS_OUTPUT_FILE` (default data/freedns-public.txt), `FREEDNS_UA` to override User-Agent.
+- Then point the checker at the scraped list: `LS_DOMAINS_FILE=data/freedns-public.txt npm start`.
+
 ## Inputs
 - Domain list: edit `data/domains.txt` (comma or newline separated), or set `LS_DOMAINS="a.com,b.com"`, or point to a file with `LS_DOMAINS_FILE=./my-domains.txt`.
 - Category map: edit `config/categories.json` (CategoryNumber, CategoryName, Allow).
