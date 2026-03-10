@@ -1,4 +1,12 @@
 {
+  "6": {
+    "CategoryNumber": "6",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "lekhnathfb.com.np"
+    ]
+  },
   "21": {
     "CategoryNumber": "21",
     "CategoryName": "Unknown",
@@ -13,6 +21,30 @@
     "Allow": false,
     "examples": [
       "opt-inrewards.com"
+    ]
+  },
+  "33": {
+    "CategoryNumber": "33",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "5a3bz.cn"
+    ]
+  },
+  "58": {
+    "CategoryNumber": "58",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "sangguru.id"
+    ]
+  },
+  "116": {
+    "CategoryNumber": "116",
+    "CategoryName": "Unknown",
+    "Allow": false,
+    "examples": [
+      "installgentoo.com"
     ]
   }
 }

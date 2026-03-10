@@ -1,1 +1,50 @@
-[]
+[
+  {
+    "host": "juristas.com.ve",
+    "category": "Society - Politics",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "juristas.com.ve"
+      },
+      "cat": 96,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lalitakc.com.np",
+    "category": "Computers",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "lalitakc.com.np"
+      },
+      "cat": 57,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "mean.biz",
+    "category": "Computers",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "mean.biz"
+      },
+      "cat": 57,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "rossco.uk",
+    "category": "Music",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "rossco.uk"
+      },
+      "cat": 49,
+      "action": "host_lookup"
+    }
+  }
+]

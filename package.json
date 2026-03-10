@@ -1,6 +1,6 @@
 {
   "name": "lightspeed",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
@@ -13,7 +13,11 @@
   "dependencies": {
     "ws": "^8.19.0"
   },
-  "keywords": ["lightspeed", "freedns", "domain-filter"],
+  "keywords": [
+    "lightspeed",
+    "freedns",
+    "domain-filter"
+  ],
   "author": "",
   "license": "ISC",
   "description": "Scrape FreeDNS public domains and bulk-check them against Lightspeed filter categories"
