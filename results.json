@@ -1,0 +1,26 @@
+[
+  {
+    "host": "dewi.or.id",
+    "category": "Entertainment",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "dewi.or.id"
+      },
+      "cat": 45,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "azure-cost-estimator.se",
+    "category": "Computers",
+    "allowed": true,
+    "raw": {
+      "request": {
+        "host": "azure-cost-estimator.se"
+      },
+      "cat": 57,
+      "action": "host_lookup"
+    }
+  }
+]

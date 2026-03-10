@@ -1,0 +1,2366 @@
+[
+  {
+    "host": "shishirlama.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "shishirlama.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "colgram.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "colgram.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "rabindrahamal.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "rabindrahamal.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ramkumartharu.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ramkumartharu.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "jashish.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "jashish.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sarojramtel.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sarojramtel.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "acharyakiran.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "acharyakiran.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "macroscopechile.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "macroscopechile.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "blueclip.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "blueclip.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kb-exchange.info",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kb-exchange.info"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ypcnepal.org.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ypcnepal.org.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "siderys.net.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "siderys.net.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "decharacter.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "decharacter.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "we-trade.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "we-trade.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "poudelbhuvan.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "poudelbhuvan.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lovemumbai.com.ar",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lovemumbai.com.ar"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bestar.sg",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bestar.sg"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "magseguros.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "magseguros.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ecodrip.net",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ecodrip.net"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dichmay.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dichmay.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "teonote.ro",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "teonote.ro"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "tggroup.sg",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "tggroup.sg"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "gaoexpresstowing.sg",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "gaoexpresstowing.sg"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lakeballs.fi",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lakeballs.fi"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "izlet.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "izlet.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "gharsev.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "gharsev.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "gracyjohns.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "gracyjohns.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "itmaxima.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "itmaxima.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "jemix.sg",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "jemix.sg"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ideasconflow.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ideasconflow.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kbmax.sg",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kbmax.sg"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "webmakers.ch",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "webmakers.ch"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "atmospheres.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "atmospheres.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "gabrielamelopropiedades.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "gabrielamelopropiedades.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "estudiohol.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "estudiohol.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bipinmaharjan.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bipinmaharjan.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kritikumari.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kritikumari.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "anandprasad.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "anandprasad.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "craftleds.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "craftleds.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "keshabkafle.com.np",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "keshabkafle.com.np"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "tatkanc.ru",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "tatkanc.ru"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "decsei.ro",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "decsei.ro"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lokprakashpandey.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lokprakashpandey.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "maniramrai.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "maniramrai.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "roshanadhikary.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "roshanadhikary.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "rohitbajimaya.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "rohitbajimaya.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "drtonywang.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "drtonywang.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "laplancad.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "laplancad.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "8bit.ca",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "8bit.ca"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "cmtamang.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "cmtamang.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "physon.org.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "physon.org.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bimalaraut.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bimalaraut.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "scheelarquitectos.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "scheelarquitectos.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "minetest.land",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "minetest.land"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sushmarajbanshi.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sushmarajbanshi.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "smartdc.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "smartdc.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "videosatlas.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "videosatlas.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sisfirewall.com.br",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sisfirewall.com.br"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "smileinndentalclinic.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "smileinndentalclinic.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "chanka.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "chanka.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sharmaraju.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sharmaraju.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kanhaiyajoshi.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kanhaiyajoshi.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lwmusic.ca",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lwmusic.ca"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "cycimportaciones.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "cycimportaciones.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "cmconsultores.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "cmconsultores.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "portalwebvillamercedes.gob.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "portalwebvillamercedes.gob.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "patrickwrede.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "patrickwrede.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ashishkc.com.np",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ashishkc.com.np"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "parapentemanquehue.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "parapentemanquehue.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "zerocoolgames.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "zerocoolgames.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "hantulaut.web.id",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "hantulaut.web.id"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bhandariupakar.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bhandariupakar.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "locosxelfutbol.org",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "locosxelfutbol.org"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "happymosaic.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "happymosaic.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "xn--simplonsumer-ncb.ch",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "xn--simplonsumer-ncb.ch"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "choppez.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "choppez.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "geoecon.info",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "geoecon.info"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "claudiogatica.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "claudiogatica.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "crazycamaro.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "crazycamaro.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dkewat.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dkewat.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "pros-landscaping-ma.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "pros-landscaping-ma.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "hiscouch.com",
+    "category": "Security",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "hiscouch.com"
+      },
+      "cat": 72,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "chopez.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "chopez.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "wikilegia.org",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "wikilegia.org"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sanjipkamti.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sanjipkamti.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bin.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bin.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bamboobar.com.br",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bamboobar.com.br"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lgmnow.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lgmnow.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "2028.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "2028.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sonjanherkku.fi",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sonjanherkku.fi"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "natbees.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "natbees.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "cloudbarfbag.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "cloudbarfbag.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sashank78.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sashank78.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "toma.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "toma.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "arrakis.pw",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "arrakis.pw"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "casavar.com.ar",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "casavar.com.ar"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "rxtech.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "rxtech.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "30x.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "30x.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "luxurytransport.rs",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "luxurytransport.rs"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "daya.twdhwfwtgy.icu",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "daya.twdhwfwtgy.icu"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ktx.ro",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ktx.ro"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "lynn520.xyz",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "lynn520.xyz"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bhabven.xyz",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bhabven.xyz"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "swierki.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "swierki.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ololow.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ololow.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "swepish.xyz",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "swepish.xyz"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "jsrodri.es",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "jsrodri.es"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "imaginelearningmath.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "imaginelearningmath.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "aumentika.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "aumentika.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "fire-change.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "fire-change.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "desarrollos-lowcost.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "desarrollos-lowcost.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "profikiffer.de",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "profikiffer.de"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kijkmeaanwanneerik.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kijkmeaanwanneerik.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "national-birdshow.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "national-birdshow.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "plik-perm.ru",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "plik-perm.ru"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "jqdaezrhg.xyz",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "jqdaezrhg.xyz"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "chiaowang.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "chiaowang.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "7geo7.ru",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "7geo7.ru"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dnscream.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dnscream.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "v119.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "v119.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "profikiffer.club",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "profikiffer.club"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bisovea.ru",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bisovea.ru"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "girl.place",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "girl.place"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "forzajuve.co.uk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "forzajuve.co.uk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sentinet.co.za",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sentinet.co.za"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dnsear.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dnsear.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "pageparts.xyz",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "pageparts.xyz"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "sanamgolf.com",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "sanamgolf.com"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "princess.cool",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "princess.cool"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "angel.place",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "angel.place"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "vulpes.pub",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "vulpes.pub"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "redijav.de",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "redijav.de"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "suragu.net",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "suragu.net"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dnswish.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dnswish.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "puellamagi.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "puellamagi.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bangerade.us",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bangerade.us"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "telewordplus.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "telewordplus.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "oxygen.net.za",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "oxygen.net.za"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "aerodev.cc",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "aerodev.cc"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "surfek.xyz",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "surfek.xyz"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "brg2.xyz",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "brg2.xyz"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "quenumerosalio.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "quenumerosalio.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "riteeats.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "riteeats.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "terbos.com.br",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "terbos.com.br"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "soynutrimeraki.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "soynutrimeraki.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "salavat.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "salavat.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "outsidehurtig.se",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "outsidehurtig.se"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ianex.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ianex.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "fuckphillipthegerman.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "fuckphillipthegerman.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "groundfloorsolutions.co.uk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "groundfloorsolutions.co.uk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "soyescalahumana.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "soyescalahumana.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "setto.cl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "setto.cl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dmf-ivv.dk",
+    "category": "Security",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dmf-ivv.dk"
+      },
+      "cat": 72,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "ho-danone.id",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "ho-danone.id"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "klinikkenoj.dk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "klinikkenoj.dk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "naturalstatehollow.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "naturalstatehollow.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "goodfox.com.br",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "goodfox.com.br"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dragonfruit.su",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dragonfruit.su"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "morso-si.dk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "morso-si.dk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "jakarta.st",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "jakarta.st"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "deez.nz",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "deez.nz"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "warga.ai",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "warga.ai"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "itsourceccs.com",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "itsourceccs.com"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "2hintranet.hu",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "2hintranet.hu"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "frogiesarcade.com",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "frogiesarcade.com"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "meshtastic.hu",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "meshtastic.hu"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "riseelevetors.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "riseelevetors.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "creatyc.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "creatyc.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "vandrekalenderen.dk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "vandrekalenderen.dk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "klinikfysik.dk",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "klinikfysik.dk"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "morsfodterapi.dk",
+    "category": "Security - Proxy",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "morsfodterapi.dk"
+      },
+      "cat": 28,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "687518.xyz",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "687518.xyz"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "2hinformatika.hu",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "2hinformatika.hu"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bogie.me",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bogie.me"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "nlsn.cc",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "nlsn.cc"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "divniybereg.ru",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "divniybereg.ru"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "arthasarokar.com.np",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "arthasarokar.com.np"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "4294967.xyz",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "4294967.xyz"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "paladinmining.net",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "paladinmining.net"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "machophd.org",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "machophd.org"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "rezonuns.de",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "rezonuns.de"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "esperanto.eu.org",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "esperanto.eu.org"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "atomiccamel.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "atomiccamel.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "stupid.one.pl",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "stupid.one.pl"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "toogoofy.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "toogoofy.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "kan-do.org",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "kan-do.org"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "garayfamily.com",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "garayfamily.com"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "chaplin.info",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "chaplin.info"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "headenugz.org",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "headenugz.org"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "decresenzo.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "decresenzo.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "with.mirkforce.de",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "with.mirkforce.de"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "butterweasel.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "butterweasel.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dirtydog.no",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dirtydog.no"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "bernot.org",
+    "category": "Unknown",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "bernot.org"
+      },
+      "cat": 0,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "tas-network.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "tas-network.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "badell.com",
+    "category": "Access Denied",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "badell.com"
+      },
+      "cat": 67,
+      "action": "host_lookup"
+    }
+  },
+  {
+    "host": "dark-mirror.com",
+    "category": "Security - Domain Sharing",
+    "allowed": false,
+    "raw": {
+      "request": {
+        "host": "dark-mirror.com"
+      },
+      "cat": 144,
+      "action": "host_lookup"
+    }
+  }
+]
